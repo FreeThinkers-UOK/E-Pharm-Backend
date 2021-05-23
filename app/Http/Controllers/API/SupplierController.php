@@ -1,0 +1,51 @@
+<?php
+
+
+namespace App\Http\Controllers\API;
+use App\Http\Controllers\API\ApiBaseController as ApiBaseController;
+use Illuminate\Http\Request;
+use App\Models\Supplier;
+use App\Http\Resources\Supplier as SupplierResource;
+use App\Http\Resources\UserResource;
+use Auth;
+use Validator;
+use App\Helpers\AuthRoleClass;
+class SupplierController extends ApiBaseController
+{
+  //show all buyers
+  public function index()
+  {
+      $suppliers = Supplier::all();
+      return $this->sendResponse(SupplierResource::collection($suppliers), 'Suppliers retrieved successfully.');
+  }
+
+  public function show($id)
+  {
+      $supplier = Supplier::find($id);
+      if(is_null($supplier)){
+        return $this->sendError("supplier is not found");
+    }
+      return $this->sendResponse((new SupplierResource($supplier)), 'Supplier retrieved successfully.');
+  }
+  
+  public function getSupplierByProductId($productid)
+    {
+        $products = Product::find($productid);
+        $productsuppliers = $products->suppliers()->get();
+        $allproductssuppliers=[];
+        foreach($productsuppliers as $productsupplier)
+            {
+                $sproductsuppliers=$productsupplier->user()->first()->name;
+                array_push($allproductssuppliers,$sproductsuppliers);
+                
+            }
+        if (is_null($allproductssuppliers)) {
+            return $this->sendError('Products not found.');
+        }
+   
+        return $this->sendResponse(($allproductssuppliers), 'Products retrieved successfully.');
+    }
+
+}
+    
+
