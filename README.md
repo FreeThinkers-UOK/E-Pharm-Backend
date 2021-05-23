@@ -1,4 +1,4 @@
-NFC BACKEND
+Epharm BACKEND
 
 1. composer update
 2. cp .env.example .env   [Set up the database]
