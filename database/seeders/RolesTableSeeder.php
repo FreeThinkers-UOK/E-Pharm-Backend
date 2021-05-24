@@ -37,6 +37,12 @@ class RolesTableSeeder extends Seeder
                 'level'       => 1,
             ],
             [
+                'name'        => 'DeliveryMen',
+                'slug'        => 'deliverymen',
+                'description' => 'DeliveryMen Role',
+                'level'       => 1,
+            ],
+            [
                 'name'        => 'StoreKeeper',
                 'slug'        => 'storekeeper',
                 'description' => 'StoreKeeper Role',
@@ -48,12 +54,7 @@ class RolesTableSeeder extends Seeder
                 'description' => 'Cashier Role',
                 'level'       => 1,
             ],
-            [
-                'name'        => 'DeliveryMen',
-                'slug'        => 'deliverymen',
-                'description' => 'DeliveryMen Role',
-                'level'       => 1,
-            ],
+           
            
         ];
 
