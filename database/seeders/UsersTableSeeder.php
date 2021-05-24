@@ -16,9 +16,9 @@ class UsersTableSeeder extends Seeder
         $userRole = config('roles.models.role')::where('name', '=', 'User')->first();
         $adminRole = config('roles.models.role')::where('name', '=', 'Admin')->first();
         $pharmacistRole = config('roles.models.role')::where('name', '=', 'Pharmacist')->first();
-        $assistantpharmacistRole = config('roles.models.role')::where('name', '=', 'AssistantPharmacist')->first();
         $cashierRole = config('roles.models.role')::where('name', '=', 'Cashier')->first();
         $deliverymenRole = config('roles.models.role')::where('name', '=', 'DeliveryMen')->first();
+        $assistantpharmacistRole = config('roles.models.role')::where('name', '=', 'AssistantPharmacist')->first();
         $storekeeperRole = config('roles.models.role')::where('name', '=', 'StoreKeeper')->first();
         $permissions = config('roles.models.permission')::all();
 
@@ -44,8 +44,8 @@ class UsersTableSeeder extends Seeder
         if (config('roles.models.defaultUser')::where('email', '=', 'pharmacist@epharm.com')->first() === null) {
             $newUser = config('roles.models.defaultUser')::create([
                 'name'     => 'Pharmacist',
-                'first_name'=>'mpharm',
-                'last_name'=>'mpharm',
+                'first_name'=>'epharm',
+                'last_name'=>'epharm',
                 'email'    => 'pharmacist@epharm.com',
                 'password' => bcrypt('password'),
             ]);
@@ -100,6 +100,6 @@ class UsersTableSeeder extends Seeder
 
             $newUser;
             $newUser->attachRole($storekeeperRole);
-        }
+v        }
     }
 }

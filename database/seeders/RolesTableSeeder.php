@@ -24,18 +24,7 @@ class RolesTableSeeder extends Seeder
                 'description' => 'Admin Role',
                 'level'       => 5,
             ],
-            [
-                'name'        => 'Pharmacist',
-                'slug'        => 'pharmacist',
-                'description' => 'Pharmacist Role',
-                'level'       => 1,
-            ],
-            [
-                'name'        => 'AssistantPharmacist',
-                'slug'        => 'assistantpharmacist',
-                'description' => 'AssistantPharmacist Role',
-                'level'       => 1,
-            ],
+
             [
                 'name'        => 'StoreKeeper',
                 'slug'        => 'storekeeper',
@@ -49,12 +38,24 @@ class RolesTableSeeder extends Seeder
                 'level'       => 1,
             ],
             [
+                'name'        => 'Pharmacist',
+                'slug'        => 'pharmacist',
+                'description' => 'Pharmacist Role',
+                'level'       => 1,
+            ],
+            [
+                'name'        => 'AssistantPharmacist',
+                'slug'        => 'assistantpharmacist',
+                'description' => 'AssistantPharmacist Role',
+                'level'       => 1,
+            ],
+            [
                 'name'        => 'DeliveryMen',
                 'slug'        => 'deliverymen',
                 'description' => 'DeliveryMen Role',
                 'level'       => 1,
             ],
-           
+
         ];
 
         /*
